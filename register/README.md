@@ -1,3 +1,15 @@
+## Model logging vs registering
+Purpose: Logging focuses on capturing the model and its training context, while registering focuses on managing the model lifecycle and deployment.
+
+Location: Logged models are stored as artifacts within a run, whereas registered models are stored in the Model Registry.
+
+Versioning: Registering introduces versioning and lifecycle management, which are not inherently part of logging.
+
+Deployment: Registered models are more directly linked to deployment pipelines and production stages.
+
+In summary, model logging captures the details of model training, while model registering organizes and manages these models for deployment and collaboration within an organization.
+
+
 ## Register Models and retrieve them
 
 Registering models is a big step towards reproducibility in ML. Until recently, there was no versioning for datasets or models. MLflow has the ability to register, track, and retrieve models. This aligns MLflow very well with cloud providers like Azure that offers the ability to track models in similar ways.
