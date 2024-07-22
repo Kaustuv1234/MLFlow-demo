@@ -13,7 +13,14 @@ mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root /t
 
 ## Serving a model by run
 
-See the `log_model.py` file to programmatically retrieve a T5 model with HuggingFace Transformers and then register it into the UI. Then run inferece using the `curl` command on the `/invocations` API endpoint:
+See the `log_model.py` file to programmatically retrieve a T5 model with HuggingFace Transformers and then register it into the UI. 
+
+```
+pip install torch transformers sentencepiece
+python log_model.py
+```
+
+Then run inferece using the `curl` command on the `/invocations` API endpoint:
 
 ```
 curl -X POST -H "Content-Type:application/json; format=pandas-split" --data '{"columns":["text"],"data":[["Today is a perfect day to practice automation skills"]]}' http://127.0.0.1:5000/invocations
